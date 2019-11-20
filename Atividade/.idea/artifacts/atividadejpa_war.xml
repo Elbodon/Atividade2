@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="atividadejpa:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>atividadejpa</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="atividadejpa.war">
+      <element id="artifact" artifact-name="atividadejpa:war exploded" />
+    </root>
+  </artifact>
+</component>

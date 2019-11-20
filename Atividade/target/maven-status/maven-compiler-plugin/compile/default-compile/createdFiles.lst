@@ -1,0 +1,7 @@
+br/edu/ifpb/dac/domain/Inscricao.class
+br/edu/ifpb/dac/domain/Artigo.class
+br/edu/ifpb/dac/domain/Participante.class
+br/edu/ifpb/dac/domain/Endereco.class
+br/edu/ifpb/dac/domain/Inscricao$TipoEvento.class
+br/edu/ifpb/dac/dao/ParticipanteDAO.class
+br/edu/ifpb/dac/domain/Contato.class

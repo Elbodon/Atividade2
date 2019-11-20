@@ -10,18 +10,30 @@ import java.util.Date;
 public class Inscricao implements Serializable{
 
 
-    public enum TipoEvento { CONGRESSO, SIMPOSIO };
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String status;
-    @Temporal(TemporalType.DATE)
     private Date dataInscricao;
+    @Column(columnDefinition = "VARCHAR(100)")
+    private String status;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_participante")
+    private Participante participante;
+    private String idTransacao;
     private Double preco;
+    private String tipoEvento;
     private String tipoParticipacao;
-    @Enumerated(EnumType.STRING)
-    private  TipoEvento tipoEvento;
+
+
+    public Inscricao(Date dataInscricao, String status, Participante participante, String id_transacao, Double preco, String tipoEvento, String tipoParticipacao) {
+        this.dataInscricao = dataInscricao;
+        this.status = status;
+        this.participante = participante;
+        this.idTransacao = idTransacao;
+        this.preco = preco;
+        this.tipoEvento = tipoEvento;
+        this.tipoParticipacao = tipoParticipacao;
+    }
 
     public Inscricao() {
 
@@ -67,11 +79,27 @@ public class Inscricao implements Serializable{
         this.tipoParticipacao = tipoParticipacao;
     }
 
-    public TipoEvento getTipoEvento() {
+    public String getTipoEvento() {
         return tipoEvento;
     }
 
-    public void setTipoEvento(TipoEvento tipoEvento) {
+    public void setTipoEvento(String tipoEvento) {
         this.tipoEvento = tipoEvento;
+    }
+
+    public Participante getParticipante() {
+        return participante;
+    }
+
+    public void setParticipante(Participante participante) {
+        this.participante = participante;
+    }
+
+    public String getIdTransacao() {
+        return idTransacao;
+    }
+
+    public void setIdTransacao(String idTransacao) {
+        this.idTransacao = idTransacao;
     }
 }

@@ -10,31 +10,26 @@ import java.util.List;
 public class Participante  implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "participante_sequence")
-    @SequenceGenerator(name = "participante_sequence", sequenceName = "part_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
+    @Column(columnDefinition = "VARCHAR(100)")
     private String email;
+    @Column(columnDefinition = "VARCHAR(100)")
     private String nomeCracha;
+    @Column(columnDefinition = "VARCHAR(100)")
     private String instituicao;
+    @Column(columnDefinition = "VARCHAR(15)")
     private String CPF;
     private String tipoUsuario;
     private String profissao;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "contato_participante")
+    @Embedded
     private Contato contato;
-
-    @OneToOne(cascade = CascadeType.ALL)
+    @Embedded
     private Endereco endereco;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Artigo> artigo;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Inscricao> inscricoes;
-
-    public Participante(String nome, String email, String nomeCracha, String instituicao, String CPF, String tipoUsuario, String profissao, Contato contato, Endereco endereco, List<Artigo> artigo, List<Inscricao> inscricoes) {
+    public Participante(String nome, String email, String nomeCracha, String instituicao, String CPF, String tipoUsuario, String profissao, Contato contato, Endereco endereco) {
         this.nome = nome;
         this.email = email;
         this.nomeCracha = nomeCracha;
@@ -44,8 +39,6 @@ public class Participante  implements Serializable{
         this.profissao = profissao;
         this.contato = contato;
         this.endereco = endereco;
-        this.artigo = artigo;
-        this.inscricoes = inscricoes;
     }
 
     public Participante() {
@@ -116,36 +109,5 @@ public class Participante  implements Serializable{
         this.profissao = profissao;
     }
 
-    public Contato getContato() {
-        return contato;
-    }
-
-    public void setContato(Contato contato) {
-        this.contato = contato;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public List<Artigo> getArtigo() {
-        return artigo;
-    }
-
-    public void setArtigo(List<Artigo> artigo) {
-        this.artigo = artigo;
-    }
-
-    public List<Inscricao> getInscricaos() {
-        return inscricoes;
-    }
-
-    public void setInscricaos(List<Inscricao> inscricoes) {
-        this.inscricoes = inscricoes;
-    }
     
 }

@@ -9,21 +9,25 @@ import java.util.Date;
 public class Artigo implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "artigo_sequence")
     private Integer id;
-    @Column(length = 200, nullable = false)
     private String titulo;
     private String orientador;
     private String coautores;
     private String modalidade;
-    @Temporal(TemporalType.DATE)
-    private Date dataSubmissao;
+    @Column(columnDefinition = "VARCHAR(30)")
+    private String dataSubmissao;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_participante")
+    private Participante participante;
+    @Column(columnDefinition = "VARCHAR(100)")
     private String urlDownload;
 
     public Artigo(){
 
     }
 
-    public Artigo(Integer id, String titulo, String orientador, String coautores, String modalidade, Date dataSubmissao, String urlDownload) {
+    public Artigo(Integer id, String titulo, String orientador, String coautores, String modalidade, String dataSubmissao, String urlDownload) {
         this.id = id;
         this.titulo = titulo;
         this.orientador = orientador;
@@ -73,11 +77,11 @@ public class Artigo implements Serializable {
         this.modalidade = modalidade;
     }
 
-    public Date getDataSubmissao() {
+    public String getDataSubmissao() {
         return dataSubmissao;
     }
 
-    public void setDataSubmissao(Date dataSubmissao) {
+    public void setDataSubmissao(String dataSubmissao) {
         this.dataSubmissao = dataSubmissao;
     }
 

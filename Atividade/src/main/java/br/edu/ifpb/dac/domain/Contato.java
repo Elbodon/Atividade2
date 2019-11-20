@@ -2,14 +2,10 @@ package br.edu.ifpb.dac.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.lang.annotation.Retention;
 
-@Entity
-@Table(name = "contatos")
+@Embeddable
 public class Contato implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     String telefoneResidencial;
     String telefoneComercial;
     String telefoneCelular;

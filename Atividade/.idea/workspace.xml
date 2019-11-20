@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="atividadejpa:war" />
+      <artifact name="atividadejpa:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c0195d1a-91f5-48b6-acef-45a974bd45a8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +35,23 @@
       </list>
     </option>
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectId" id="1TaGna61NZlrIxGuH2t0g15gxWt" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AtividadeJPA" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/br/edu/ifpb/dac/domain" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/br/edu/ifpb/dac/domain" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -138,7 +156,7 @@
       <workItem from="1573690962800" duration="3127000" />
       <workItem from="1574116310863" duration="3247000" />
       <workItem from="1574202623723" duration="1485000" />
-      <workItem from="1574207754670" duration="3086000" />
+      <workItem from="1574207754670" duration="5394000" />
     </task>
     <servers />
   </component>

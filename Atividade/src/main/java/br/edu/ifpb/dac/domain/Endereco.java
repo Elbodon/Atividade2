@@ -1,13 +1,14 @@
 package br.edu.ifpb.dac.domain;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "endereco")
+@Embeddable
 public class Endereco implements Serializable {
 
-    @Id
     String numero;
     String logradouro;
     String bairro;
